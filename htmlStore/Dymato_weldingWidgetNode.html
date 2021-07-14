@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+<style>
+
+.header {
+	width: 400px;
+	height: 40px;
+}
+.header .title{
+    padding-left: 10px;
+    padding-top: 10px;
+    width: 240px;
+    display: inline-block;
+}
+.header .img-1 {
+    margin: 0px;
+    float: right;
+    width: 150px;
+    height: 40px;
+}
+.radio-button{
+    height: 100px;
+    width: 350px;
+    padding-top: 10px;
+    padding-left: 20px;
+    border-size: 2px;
+    border-style: solid;
+    border-color: red;
+}
+.radio-button .button-text{
+    font-size = 20px;
+}
+.radio-button .label{
+    display:inline-block;
+}
+.radio-button .buttons{
+    width: 100px;
+    display: inline-block;
+    float: right;
+} 
+h1{
+    font-size: 20px;
+}
+</style>
+<div class="header">
+	<div class="title">
+		<h1>Dymato welding plugin</h1>
+	</div>
+    	<XImage className="img-1" id="logo-dymato" src="resource/logo-dymato.png"/>
+</div>
+<div class="radio-button">
+    <p class="label">Welding process</p>
+    <div class="buttons">
+    	<span class="button-text">On</span>
+    	<XRadio className="button-yes" id="radioBtn" checked="false"></XRadio>
+    	<XRadio className="button-no" id="radioBtn2" checked="true"></XRadio>
+    	<span class="button-text">Off</span>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,13 @@
+{
+  "name": "Dymato_welding",
+  "version": "1.0.0",
+  "minimumRequiredVersion": "2.001.003.012",
+  "description": "plug-in for welding process",
+  "vendor": "Dymato",
+  "copyright": "",
+  "contactAddress": "",
+  "author": "",
+  "dependencies": {},
+  "license": "",
+  "rodiVersion": ""
+}

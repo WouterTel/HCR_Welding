@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+<style>
+h1{
+    font-size: 20px:
+}
+.header {
+	width: 604px;
+	height: 40px;
+}
+.header .title{
+    padding-left: 10px;
+    padding-top: 10px;
+    width: 400px;
+    display: inline-block;
+}
+.header .img-1 {
+    margin: 0px;
+    float: right;
+    width: 150px;
+    height: 40px;
+}
+.body {
+	width: 604px;
+	height: 137px;
+	margin: 0px
+	border: 1px solid #606060;
+	display: flex;
+}
+.body .left-column{
+	flex:1 1;
+	padding-right: 5px;
+	padding-top: 5px;	
+}
+.body .right-column{
+	flex:1 1;
+	padding-right: 5px;
+	padding-top: 5px;	
+}
+.body .block{
+	width: 100%;
+	height: 40px;
+	padding-right: 10px;
+}	
+.body .weaving-input-name{
+	display:inline-block;
+	margin-left: 5px;
+	margin-top: 10px;
+}
+.body .weaving-input-name em{
+        font-size: 10px;
+        font-style: normal;
+}
+.body .weaving-input{
+	display: inline-block;
+	float: right;
+        width: 2.6em;
+}
+.body .weaving-selectbox{
+	display: inline-block;
+        float: right;
+        width: 12em;
+}
+.body .checkboxdiv{
+	display: inline-block;
+	float: right;
+	height: 30px;
+	width: 40px;
+	padding-top: 5px;
+}
+.footer{
+	width: 600px;
+	heigth: 40px;
+	display: flex;
+	border-top: 1px solid #606060;
+}
+.footer .left-button{
+	width:300px;
+	heigth: 40px;
+	flex: 1;
+}
+.footer .right-button{
+	width:300px;
+	heigth: 40px;
+	flex: 1;
+	margin-left: 5px;
+}
+.footer .knopje-actief{
+	margin-top: -1px;
+	width: 250px;
+	margin-left: 25px; 
+	border: 1px solid #606060; 
+	border-top: 1px solid #fff;
+	background-color: #fff;
+    	color: #000;
+	border-radius: 0 0 5px 5px;
+}
+.footer .knopje-nonactief{
+	margin-top: -1px;
+	width: 250px;
+	margin-left: 25px; 
+	background-color: #f3f6f7;
+	border: 1px solid #d6dbdd;
+	border-top: 1px solid #606060;
+	color: #5b5b5b;
+	border-radius: 0 0 5px 5px;
+}
+</style>
+	<div class="header">
+		<div class="title">
+			<h1>Dymato welding plugin</h1>
+		</div>
+    		<XImage className="img-1" id="logo-dymato" src="resource/logo-dymato.png"/>
+	</div>
+	<XDiv id="standardPage" visible="true">
+		<div class="body">
+			<div class="left-column">
+				<div class="block">
+				    <p class="weaving-input-name">Type</p>
+				    <XSelectBox id="weavingType" className="weaving-selectbox">
+					<XOption value=0 label="Straight" />	
+                        		<XOption value=2 label="Zigzag" />
+                        		<XOption value=1 label="Sinusoidal" />
+                    		    </XSelectBox>
+				</div>
+				<div class="block">
+                    			<p class="weaving-input-name">Left Amplitude <em>(0-10 mm)</em></p>
+                    			<XInput className="weaving-input" id="weavingLeftAmp" className="weaving-input" value="0" min="0" max="10" type="number" />
+				</div>
+				<div class="block">
+                    			<p class="weaving-input-name">Right Amplitude <em>(0-10 mm)</em></p>
+                    			<XInput className="weaving-input" id="weavingRightAmp" className="weaving-input" value="0" min="0" max="10" type="number" />
+   				</div>
+			</div>
+			<div class="right-column">
+				<div class="block">
+					<p class="weaving-input-name">Frequency <em>(0-3 Hz)</em></p>
+                    			<XInput className="weaving-input" id="weavingFreq" className="weaving-input" value="0" min="0" max="3" type="number" />
+				</div> 
+				<div class="block">
+                    			<p class="weaving-input-name">Speed <em>(mm/s)</em></p>
+                   	 		<XInput className="weaving-input" id="velocitySelect" className="weaving-input" value="0" min="0" max="100" type="number" disabled="false" />
+				</div> 
+			</div>
+		</div>
+	</Xdiv>
+	<XDiv id="advancedPage" visible="false">
+		<div class="body">
+			<div class="left-column">
+				<div class="block">
+					<p class="weaving-input-name">Wait before move <em>(0-3 s)</em></em></p>
+                    			<XInput className="weaving-input" id="weavingWait" className="weaving-input" value="0" min="0" max="3" type="number" />
+				</div> 
+				<div class="block">
+					<p class="weaving-input-name">Wait after move <em>(0-3 s)</em></em></p>
+                    			<XInput className="weaving-input" id="weavingWaitStop" className="weaving-input" value="0" min="0" max="3" type="number" />
+				</div> 
+			</div>
+			<div class="right-column">
+				<div class="block">
+					<p class="weaving-input-name">Bit 1 </p>
+					<div class="checkboxdiv">
+                        			<XCheckbox className="weaving-checkbox" id="weavingJobOne" name="checkbox1" value="1" checked="false"></XCheckbox>
+					</div>
+				</div>
+				<div class="block">
+					<p class="weaving-input-name">Bit 2 </p>
+					<div class="checkboxdiv">
+                        			<XCheckbox className="weaving-checkbox" id="weavingJobTwo" name="checkbox2" value="1" checked="false"></XCheckbox>
+					</div>
+				</div>
+				<div class="block">
+					<p class="weaving-input-name">Bit 3 </p>
+					<div class="checkboxdiv">
+                        			<XCheckbox className="weaving-checkbox" id="weavingJobThree" name="checkbox3" value="1" checked="false"></XCheckbox>
+					</div>
+				</div>
+			</div>
+		</div>
+	</Xdiv>
+	<div class="footer">
+		<div class ="left-button">
+			<XButton className="knopje-actief" id="btnStandard" size="small" text="Standard settings">
+		</div>
+		<div class ="right-button">
+			<XButton className="knopje-nonactief" id="btnAdvanced" size="small" text="Advanced settings">
+		</div>
+	</div>
+	
+</body>
+</html>
